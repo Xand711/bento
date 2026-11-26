@@ -60,13 +60,13 @@ const CONFIG = {
 		{
 			id: '2',
 			name: 'YouTube Music',
-			icon: 'eighth-notes',
+			icon: 'circle-play',
 			link: 'https://music.youtube.com/',
 		},
 		{
 			id: '3',
 			name: 'YouTube',
-			icon: 'youtube',
+			icon: 'play',
 			link: 'https://www.youtube.com/',
 		},
 		{
