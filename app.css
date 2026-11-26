@@ -99,10 +99,10 @@ body {
 
 .container {
   width: 145vh;
-  height: 85vh;
+  height: 90vh;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr) auto repeat(2, 1fr);
+  grid-template-rows: repeat(2, 0.9fr) auto repeat(2, 1.1fr);
   grid-gap: 30px;
   padding: 20px;
 }
@@ -340,7 +340,7 @@ body {
 
 .searchBlock {
 	grid-row: 3;
-	grid-column: 1 / span 2;
+	grid-column: 1 / span 4;
 	min-width: 0;
 	width: calc(100% - 20px);
 	max-width: 100%;
@@ -357,7 +357,7 @@ body {
 	border: none;
 	border-radius: 10px;
 	background: #201e21; /* Change to any hex, rgb(), rgba(), or named colour */
-	color: inherit;
+	color: var(--fg);
 	font-family: inherit;
 	font-size: 1rem;
 	outline: none;
@@ -366,6 +366,7 @@ body {
 }
 
 .searchBlock input[type="search"]::placeholder {
+	color: var(--fg);
 	opacity: 0.65;
 }
 
@@ -400,10 +401,6 @@ body {
   }
 
   .linksBlockLeft {
-    grid-column: 1 / span 4;
-  }
-
-  .searchBlock {
     grid-column: 1 / span 4;
   }
 
