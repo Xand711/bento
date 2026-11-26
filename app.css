@@ -143,10 +143,22 @@ body {
   margin-top: 30px;
 }
 
+.calendarLink {
+	text-decoration: none;
+	color: inherit;
+	display: contents; /* Keeps .weatherBlock aligned properly inside .container's grid */
+}
+
 .weather {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.weatherLink {
+	text-decoration: none;
+	color: inherit;
+	display: contents; /* Keeps .weatherBlock aligned properly inside .container's grid */
 }
 
 .clock {
