@@ -1,24 +1,54 @@
 const searchForm = document.getElementById("searchForm");
 const searchInput = document.getElementById("searchInput");
 
+const BANGS = {
+	"!yt": (q) => `https://www.youtube.com/results?search_query=${encodeURIComponent(q)}`,
+	"!gh": (q) => `https://github.com/search?q=${encodeURIComponent(q)}`,
+	"!w": (q) => `https://en.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(q)}`,
+};
+
 window.addEventListener("load", () => {
 	searchInput?.focus();
 });
 
+// Press "/" outside text inputs to focus the search bar
+document.addEventListener("keydown", (event) => {
+	const target = event.target;
+	const isTyping =
+		target instanceof HTMLInputElement ||
+		target instanceof HTMLTextAreaElement ||
+		target?.isContentEditable;
+
+	if (event.key === "/" && !isTyping) {
+		event.preventDefault();
+		searchInput?.focus();
+		searchInput?.select();
+	}
+});
+
 searchForm.addEventListener("submit", (event) => {
 	event.preventDefault();
-	const query = searchInput.value.trim();
-	if (!query) return;
+	const raw = searchInput.value.trim();
+	if (!raw) return;
 
-	if (query.startsWith("http://") || query.startsWith("https://")) {
-		window.location.href = query;
+	const [firstToken, ...rest] = raw.split(/\s+/);
+	const bangKey = firstToken.toLowerCase();
+
+	if (BANGS[bangKey]) {
+		const term = rest.join(" ");
+		window.location.href = BANGS[bangKey](term);
 		return;
 	}
 
-	if (!query.includes(" ") && query.includes(".")) {
-		window.location.href = `https://${query}`;
+	if (raw.startsWith("http://") || raw.startsWith("https://")) {
+		window.location.href = raw;
 		return;
 	}
 
-	window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+	if (!raw.includes(" ") && raw.includes(".")) {
+		window.location.href = `https://${raw}`;
+		return;
+	}
+
+	window.location.href = `https://www.google.com/search?q=${encodeURIComponent(raw)}`;
 });

@@ -356,7 +356,7 @@ body {
 	padding: 12px 16px;
 	border: none;
 	border-radius: 10px;
-	background: #201e21; /* Change to any hex, rgb(), rgba(), or named colour */
+	background: var(--cards);
 	color: var(--fg);
 	font-family: inherit;
 	font-size: 1rem;
@@ -372,7 +372,13 @@ body {
 
 .searchBlock input[type="search"]:hover,
 .searchBlock input[type="search"]:focus {
-	background: #57a0d9;
+	background: var(--accent);
+	color: var(--sfg);
+}
+
+.searchBlock input[type="search"]:hover::placeholder,
+.searchBlock input[type="search"]:focus::placeholder {
+	color: var(--sfg);
 }
 
 /* M E D I A - Q U E R I E S */
