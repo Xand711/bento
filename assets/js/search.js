@@ -1,6 +1,10 @@
 const searchForm = document.getElementById("searchForm");
 const searchInput = document.getElementById("searchInput");
 
+window.addEventListener("load", () => {
+	searchInput?.focus();
+});
+
 searchForm.addEventListener("submit", (event) => {
 	event.preventDefault();
 	const query = searchInput.value.trim();
