@@ -32,8 +32,8 @@ const CONFIG = {
 	language: 'en', // More languages in https://openweathermap.org/current#multi
 
 	trackLocation: true, // If false or an error occurs, the app will use the lat/lon below
-	defaultLatitude: '37.775',
-	defaultLongitude: '-122.419',
+	defaultLatitude: '53.480',
+	defaultLongitude: '2.242',
 
 	// Autochange
 	autoChangeTheme: true,
@@ -77,9 +77,9 @@ const CONFIG = {
 		},
 		{
 			id: '5',
-			name: 'Teams',
-			icon: 'users',
-			link: 'https://teams.cloud.microsoft',
+			name: 'Google',
+			icon: 'search',
+			link: 'https://www.google.com/',
 		},
 		{
 			id: '6',
@@ -165,16 +165,16 @@ const CONFIG = {
 					link: 'https://www.linkedin.com',
 				},
 				{
-					name: 'Dribbble',
-					link: 'https://www.dribbble.com',
+					name: 'Gmail',
+					link: 'https://mail.google.com/mail/',
 				},
 				{
-					name: 'Trello',
-					link: 'https://www.trello.com',
+					name: 'Outlook',
+					link: 'https://outlook.office.com/mail/',
 				},
 				{
-					name: 'Slack',
-					link: 'https://www.slack.com',
+					name: 'Teams',
+					link: 'https://teams.cloud.microsoft/',
 				},
 			],
 		},
